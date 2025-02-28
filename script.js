@@ -1,62 +1,58 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const API_KEY = '32a587c90ada63aac4f51132ba8d4234';  // Replace with your TMDb API key
-    const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+const API_KEY = "32a587c90ada63aac4f51132ba8d4234";
+const IMG_URL = "https://image.tmdb.org/t/p/w500";
 
-    const pages = document.querySelectorAll('.page');
-    const navItems = document.querySelectorAll('.nav-item');
+let currentPage = "home";
+
+// Fetch Movies
+async function fetchMovies(endpoint) {
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${endpoint}?api_key=${API_KEY}`);
+        const data = await response.json();
+        displayMovies(data.results.slice(0, 6));
+    } catch (error) {
+        console.error("Error fetching movies:", error);
+    }
+}
+
+// Display Movies
+function displayMovies(movies) {
+    const moviesGrid = document.getElementById("moviesGrid");
+    moviesGrid.innerHTML = "";
+
+    movies.forEach(movie => {
+        const movieCard = document.createElement("div");
+        movieCard.classList.add("movie-card");
+
+        movieCard.innerHTML = `
+            <img src="${IMG_URL + movie.poster_path}" alt="${movie.title}">
+            <h4>${movie.title}</h4>
+            <p>${movie.overview.substring(0, 60)}...</p>
+        `;
+
+        moviesGrid.appendChild(movieCard);
+    });
+}
+
+// Change Page
+function setPage(page) {
+    currentPage = page;
+    document.getElementById("moviesTitle").textContent = 
+        page === "trending" ? "Trending Now" : "Popular Movies";
+
+    fetchMovies(page === "trending" ? "top_rated" : "popular");
+}
+
+// Theme Toggle
+document.getElementById("themeToggle").addEventListener("click", () => {
     const body = document.body;
-
-    function showPage(pageId) {
-        pages.forEach(page => {
-            page.classList.remove('active');
-            if (page.id === pageId) {
-                page.classList.add('active');
-                body.setAttribute('data-current-page', pageId);
-            }
-        });
+    if (body.classList.contains("dark")) {
+        body.classList.replace("dark", "light");
+        document.getElementById("themeToggle").textContent = "🌙 Dark Mode";
+    } else {
+        body.classList.replace("light", "dark");
+        document.getElementById("themeToggle").textContent = "☀️ Light Mode";
     }
-
-    navItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            e.preventDefault();
-            const pageId = item.dataset.page;
-            navItems.forEach(nav => nav.classList.remove('active'));
-            item.classList.add('active');
-            showPage(pageId);
-            window.history.pushState({}, '', `#${pageId}`);
-        });
-    });
-
-    const themeToggle = document.getElementById('theme-toggle');
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        body.setAttribute('data-theme', newTheme);
-        themeToggle.innerHTML = newTheme === 'dark' ? '<i class="bx bx-moon"></i>' : '<i class="bx bx-sun"></i>';
-    });
-
-    async function fetchMovies(endpoint, containerId) {
-        try {
-            const res = await fetch(`https://api.themoviedb.org/3/movie/${endpoint}?api_key=${API_KEY}`);
-            const data = await res.json();
-            const container = document.getElementById(containerId);
-            container.innerHTML = data.results.slice(0, 8).map(movie => `
-                <div class="movie-card">
-                    <img src="${IMG_URL}${movie.poster_path}" alt="${movie.title}">
-                    <h3>${movie.title}</h3>
-                    <p>${movie.overview.substring(0, 80)}...</p>
-                </div>
-            `).join('');
-        } catch (error) {
-            console.error('Error loading movies:', error);
-            document.getElementById(containerId).innerHTML = "Error loading movies. Try again later.";
-        }
-    }
-
-    fetchMovies('popular', 'movies-list');
-    fetchMovies('top_rated', 'trending-list');
-
-    const hash = window.location.hash.substring(1);
-    const initialPage = hash || 'home';
-    showPage(initialPage);
 });
+
+// Initial Fetch
+fetchMovies("popular");
