@@ -4,41 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winterix19 - Stream Movies & TV Shows</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
-<body>
-
+<body class="dark">
     <nav class="sidebar">
-        <h1 class="logo_name">Winterix19</h1>
+        <h1>Winterix19</h1>
         <ul>
-            <li><a href="#" class="nav-item" data-page="home">🏠 Home</a></li>
-            <li><a href="#" class="nav-item" data-page="movies">🎬 Movies</a></li>
-            <li><a href="#" class="nav-item" data-page="trending">📈 Trending</a></li>
+            <li onclick="setPage('home')">🏠 Home</li>
+            <li onclick="setPage('movies')">🎬 Movies</li>
+            <li onclick="setPage('trending')">🔥 Trending</li>
         </ul>
-        <button id="theme-toggle"><i class="bx bx-moon"></i></button>
+        <button id="themeToggle">🌙 Dark Mode</button>
     </nav>
 
     <main>
-        <section id="home" class="page active">
-            <div class="hero">
-                <h1>Welcome to Winterix19</h1>
-                <p>Your ultimate winter streaming destination ❄️</p>
-            </div>
-        </section>
-
-        <section id="movies" class="page">
-            <h2>Popular Movies</h2>
-            <div id="movies-list" class="movie-container">Loading...</div>
-        </section>
-
-        <section id="trending" class="page">
-            <h2>Trending Now</h2>
-            <div id="trending-list" class="movie-container">Loading...</div>
+        <div class="header">
+            <h2>Welcome to Winterix19</h2>
+            <p>Your ultimate winter streaming destination ❄️</p>
+        </div>
+        <section id="moviesSection">
+            <h3 id="moviesTitle">Popular Movies</h3>
+            <div id="moviesGrid" class="movies-grid"></div>
         </section>
     </main>
-
 </body>
 </html>
