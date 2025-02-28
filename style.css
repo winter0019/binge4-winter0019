@@ -1,59 +1,79 @@
 :root {
     --primary-color: #ff6b6b;
     --secondary-color: #4ecdc4;
-    --accent-color: #ffe66d;
-    --winter-blue: #6b8cff;
     --dark-bg: #1a1a2e;
     --light-bg: #f0f4ff;
-    --gradient-1: linear-gradient(45deg, #ff6b6b, #6b8cff);
-    --gradient-2: linear-gradient(45deg, #4ecdc4, #6b8cff);
-    --snowflake: url('data:image/svg+xml;utf8,<svg ...>');
+    --text-light: #ffffff;
+    --text-dark: #2d3436;
 }
 
 body {
     background: var(--dark-bg);
-    color: #fff;
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
     transition: background 0.3s ease;
 }
 
 body[data-theme="light"] {
     background: var(--light-bg);
-    color: #2d3436;
+    color: var(--text-dark);
+}
+
+.sidebar {
+    width: 200px;
+    background: var(--primary-color);
+    padding: 1rem;
 }
 
 .logo_name {
-    background: var(--gradient-1);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+    background: linear-gradient(45deg, #ff6b6b, #6b8cff);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1.5rem;
-    text-shadow: 0 0 15px rgba(255, 107, 107, 0.5);
 }
 
 .hero {
-    padding: 4rem 2rem;
+    padding: 4rem;
+    background: linear-gradient(45deg, #ff6b6b, #6b8cff);
+    text-align: center;
     border-radius: 15px;
-    margin: 1rem;
-    backdrop-filter: blur(10px);
-    text-align: center;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    background: var(--gradient-1);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+h2 {
+    text-align: center;
+    margin: 20px 0;
 }
 
-.theme-switcher {
-    padding: 1rem;
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.movie-card {
+    width: 200px;
+    background: var(--secondary-color);
+    border-radius: 10px;
+    padding: 10px;
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 10px;
 }
 
 #theme-toggle {
-    background: var(--gradient-2);
+    background: linear-gradient(45deg, #4ecdc4, #6b8cff);
     border: none;
     padding: 0.8rem;
     border-radius: 50%;
@@ -63,19 +83,4 @@ body[data-theme="light"] {
 
 #theme-toggle:hover {
     transform: rotate(180deg);
-}
-
-.page {
-    display: none;
-    padding: 2rem;
-    animation: fadeIn 0.5s ease;
-}
-
-.page.active {
-    display: block;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
 }
