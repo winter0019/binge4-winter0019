@@ -1,56 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winterix19 - Stream Movies & TV Shows</title>
-
-    <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;700&display=swap">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
+<body>
 
-<body data-current-page="home">
     <nav class="sidebar">
-        <div class="logo-details">
-            <div class="logo_name">Winterix19</div>
-        </div>
-        <ul class="nav-list">
-            <li class="nav-item active" data-page="home"><a href="#home"><i class='bx bx-home-alt'></i>Home</a></li>
-            <li class="nav-item" data-page="movies"><a href="#movies"><i class='bx bx-movie-play'></i>Movies</a></li>
-            <li class="nav-item" data-page="trending"><a href="#trending"><i class='bx bx-trending-up'></i>Trending</a></li>
+        <h1 class="logo_name">Winterix19</h1>
+        <ul>
+            <li><a href="#" class="nav-item" data-page="home">🏠 Home</a></li>
+            <li><a href="#" class="nav-item" data-page="movies">🎬 Movies</a></li>
+            <li><a href="#" class="nav-item" data-page="trending">📈 Trending</a></li>
         </ul>
-        <div class="theme-switcher">
-            <button id="theme-toggle"><i class='bx bx-sun'></i></button>
-        </div>
+        <button id="theme-toggle"><i class="bx bx-moon"></i></button>
     </nav>
 
-    <main id="main-content">
-        <!-- Home Page -->
-        <section class="page active" data-page="home">
+    <main>
+        <section id="home" class="page active">
             <div class="hero">
                 <h1>Welcome to Winterix19</h1>
                 <p>Your ultimate winter streaming destination ❄️</p>
             </div>
         </section>
 
-        <!-- Movies Section -->
-        <section class="page" data-page="movies">
+        <section id="movies" class="page">
             <h2>Popular Movies</h2>
-            <div id="movies-list" class="movie-grid"></div>
+            <div id="movies-list" class="movie-container">Loading...</div>
         </section>
 
-        <!-- Trending Section -->
-        <section class="page" data-page="trending">
+        <section id="trending" class="page">
             <h2>Trending Now</h2>
-            <div id="trending-list" class="movie-grid"></div>
+            <div id="trending-list" class="movie-container">Loading...</div>
         </section>
     </main>
 
-    <script src="script.js"></script>
 </body>
 </html>
