@@ -2,35 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Winterix19 - Stream Movies & TV Shows</title>
+
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Stream the latest movies and trending TV shows at Winterix19. Your ultimate winter streaming destination.">
 
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="gnvbU5Vg03fZufblZ_eHczqXoWSLAtSm6yESieYdMpE" />
 
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Winterix19 - Stream Movies & TV Shows">
+    <meta property="og:description" content="Stream the latest movies and trending TV shows at Winterix19.">
+    <meta property="og:image" content="https://winterix19.netlify.app/assets/preview.jpg">
+    <meta property="og:url" content="https://winterix19.netlify.app/">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Styles and Scripts -->
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
     <script defer src="script.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MHJ9ZS8C');
+    </script>
+    <!-- End Google Tag Manager -->
+
 </head>
 <body class="dark">
-    <nav class="sidebar">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHJ9ZS8C"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <nav class="sidebar" aria-label="Main Navigation">
         <h1>Winterix19</h1>
         <ul>
-            <li onclick="setPage('home')">🏠 Home</li>
-            <li onclick="setPage('movies')">🎬 Movies</li>
-            <li onclick="setPage('trending')">🔥 Trending</li>
+            <li onclick="setPage('home')" role="button" tabindex="0">🏠 Home</li>
+            <li onclick="setPage('movies')" role="button" tabindex="0">🎬 Movies</li>
+            <li onclick="setPage('trending')" role="button" tabindex="0">🔥 Trending</li>
         </ul>
-        <button id="themeToggle">🌙 Dark Mode</button>
+        <button id="themeToggle" aria-label="Toggle Dark Mode">🌙 Dark Mode</button>
     </nav>
 
     <main>
-        <div class="header">
+        <header class="header">
             <h2>Welcome to Winterix19</h2>
             <p>Your ultimate winter streaming destination ❄️</p>
-        </div>
-        <section id="moviesSection">
+        </header>
+
+        <section id="moviesSection" aria-labelledby="moviesTitle">
             <h3 id="moviesTitle">Popular Movies</h3>
-            <div id="moviesGrid" class="movies-grid"></div>
+            <div id="moviesGrid" class="movies-grid">
+                <!-- Example Movie Card -->
+                <div class="movie-card">
+                    <img src="movie-poster.jpg" alt="Movie Title Poster" loading="lazy">
+                    <h4>Movie Title</h4>
+                </div>
+            </div>
         </section>
     </main>
+
 </body>
 </html>
