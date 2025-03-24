@@ -51,10 +51,15 @@
     <nav class="sidebar" aria-label="Main Navigation">
         <h1>Winterix19</h1>
         <ul>
+            <!-- Home, Movies, Trending still toggle sections within index.html -->
             <li onclick="setPage('home')" role="button" tabindex="0">🏠 Home</li>
             <li onclick="setPage('movies')" role="button" tabindex="0">🎬 Movies</li>
             <li onclick="setPage('trending')" role="button" tabindex="0">🔥 Trending</li>
-            <li onclick="setPage('leonardo-ai-careers')" role="button" tabindex="0">🤖 AI Careers</li>
+
+            <!-- Direct link to the dedicated AI Careers page -->
+            <li>
+                <a href="ai_careers.html" role="button" tabindex="0">🤖 AI Careers</a>
+            </li>
         </ul>
         <button id="themeToggle" aria-label="Toggle Dark Mode">🌙 Dark Mode</button>
     </nav>
@@ -65,6 +70,7 @@
             <p>Your ultimate winter streaming destination ❄️</p>
         </header>
 
+        <!-- Movies Section (Default/Home) -->
         <section id="moviesSection" aria-labelledby="moviesTitle">
             <h3 id="moviesTitle">Popular Movies</h3>
             <div id="moviesGrid" class="movies-grid">
@@ -76,55 +82,40 @@
             </div>
         </section>
 
-        <section id="aiCareersSection" class="hidden" aria-labelledby="aiCareersTitle">
-            <h3 id="aiCareersTitle">Leonardo AI Careers</h3>
-            <p>Explore exciting career opportunities in AI and machine learning with Leonardo AI. Stay ahead in the tech industry with innovative projects and cutting-edge advancements.</p>
-            <div id="aiNews">
-                <h4>Latest AI News</h4>
-                <ul id="aiNewsList"></ul>
-                <input type="file" id="uploadNews" accept=".txt" />
-            </div>
-        </section>
+        <!-- Removed the old AI Careers hidden section 
+             since we now have ai_careers.html as a separate page. -->
     </main>
 
     <script>
+        // Show or hide sections within index.html (Home, Movies, Trending).
         function setPage(page) {
-            // Hide all sections
+            // Hide all relevant sections first
             document.getElementById('moviesSection').classList.add('hidden');
-            document.getElementById('aiCareersSection').classList.add('hidden');
+            // If you have a trendingSection, uncomment this line:
+            // document.getElementById('trendingSection').classList.add('hidden');
 
             // Show the selected section
-            if (page === 'movies') {
+            if (page === 'home') {
+                // For "Home", you could show a default section (e.g., moviesSection)
                 document.getElementById('moviesSection').classList.remove('hidden');
-            } else if (page === 'leonardo-ai-careers') {
-                document.getElementById('aiCareersSection').classList.remove('hidden');
-            } else {
-                // Default to Home (movies section visible)
+            } else if (page === 'movies') {
                 document.getElementById('moviesSection').classList.remove('hidden');
+            } else if (page === 'trending') {
+                // If you have a trendingSection, show it here
+                // document.getElementById('trendingSection').classList.remove('hidden');
             }
         }
 
-        document.getElementById('uploadNews').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const newsItem = document.createElement('li');
-                    newsItem.textContent = e.target.result;
-                    document.getElementById('aiNewsList').appendChild(newsItem);
-                };
-                reader.readAsText(file);
-            }
-        });
-
-        // Toggle Dark Mode
+        // Dark Mode Toggle
         document.getElementById('themeToggle').addEventListener('click', function() {
             document.body.classList.toggle('dark');
         });
     </script>
 
     <style>
-        .hidden { display: none; }
+        .hidden { 
+            display: none; 
+        }
     </style>
 
 </body>
