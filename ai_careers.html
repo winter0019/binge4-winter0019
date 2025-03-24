@@ -1,59 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Leonardo AI Careers - Winterix19</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Leonardo AI Careers - Winterix19</title>
 
-    <meta name="description" content="Explore AI career opportunities and the latest advancements in artificial intelligence with Leonardo AI.">
-    <meta property="og:title" content="Leonardo AI Careers - Winterix19">
-    <meta property="og:description" content="Stay updated on AI career opportunities and breakthroughs.">
-    <meta property="og:url" content="https://winterix19.netlify.app/ai_careers.html">
-    <meta property="og:type" content="website">
+  <!-- Meta Description for SEO -->
+  <meta name="description" content="Explore AI career opportunities and the latest advancements in artificial intelligence with Leonardo AI.">
+  <!-- Open Graph for Social Sharing -->
+  <meta property="og:title" content="Leonardo AI Careers - Winterix19">
+  <meta property="og:description" content="Stay updated on AI career opportunities and breakthroughs.">
+  <meta property="og:url" content="https://winterix19.netlify.app/ai_careers.html">
+  <meta property="og:type" content="website">
 
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Styles and Scripts -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="style.css" as="style">
+  <script defer src="script.js"></script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MHJ9ZS8C');
+  </script>
+  <!-- End Google Tag Manager -->
+
 </head>
 <body class="dark">
 
-    <nav class="sidebar">
-        <h1>Winterix19</h1>
-        <ul>
-            <li><a href="index.html">🏠 Home</a></li>
-            <li><a href="movies.html">🎬 Movies</a></li>
-            <li><a href="trending.html">🔥 Trending</a></li>
-            <li><a href="ai_careers.html">🤖 AI Careers</a></li>
-        </ul>
-    </nav>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHJ9ZS8C"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-    <main>
-        <header class="header">
-            <h2>Leonardo AI Careers</h2>
-            <p>Stay ahead in the tech industry with AI job opportunities and news.</p>
-        </header>
+  <nav class="sidebar" aria-label="Main Navigation">
+    <h1>Winterix19</h1>
+    <ul>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="movies.html">🎬 Movies</a></li>
+      <li><a href="trending.html">🔥 Trending</a></li>
+      <li><a href="ai_careers.html">🤖 AI Careers</a></li>
+    </ul>
+    <button id="themeToggle" aria-label="Toggle Dark Mode">🌙 Dark Mode</button>
+  </nav>
 
-        <section id="aiNews">
-            <h3>Latest AI News</h3>
-            <ul id="aiNewsList"></ul>
-            <input type="file" id="uploadNews" accept=".txt" />
-        </section>
-    </main>
+  <main>
+    <header class="header">
+      <h2>Leonardo AI Careers</h2>
+      <p>Stay ahead in the tech industry with AI job opportunities and news.</p>
+    </header>
 
-    <script>
-        document.getElementById('uploadNews').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const newsItem = document.createElement('li');
-                    newsItem.textContent = e.target.result;
-                    document.getElementById('aiNewsList').appendChild(newsItem);
-                };
-                reader.readAsText(file);
-            }
-        });
-    </script>
+    <section id="aiNews">
+      <h3>Latest AI News</h3>
+      <ul id="aiNewsList">
+        <!-- Admin-updated news items will be posted here. Users only view this content. -->
+        <li>AI breakthrough: New neural network architecture announced.</li>
+        <li>Company XYZ launches innovative AI internship program.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    // Dark Mode Toggle for AI Careers page
+    document.getElementById('themeToggle').addEventListener('click', function() {
+      document.body.classList.toggle('dark');
+    });
+  </script>
 
 </body>
 </html>
