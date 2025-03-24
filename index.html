@@ -1,122 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Winterix19 - Stream Movies & TV Shows</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Leonardo AI Careers - Winterix19</title>
 
-    <!-- Meta Description for SEO -->
-    <meta name="description" content="Stream the latest movies and trending TV shows at Winterix19. Your ultimate winter streaming destination.">
+  <!-- Meta Description for SEO -->
+  <meta name="description" content="Explore AI career opportunities and the latest advancements in artificial intelligence with Leonardo AI.">
 
-    <!-- Google Site Verification -->
-    <meta name="google-site-verification" content="gnvbU5Vg03fZufblZ_eHczqXoWSLAtSm6yESieYdMpE" />
+  <!-- Open Graph for Social Sharing -->
+  <meta property="og:title" content="Leonardo AI Careers - Winterix19">
+  <meta property="og:description" content="Stay updated on AI career opportunities and breakthroughs.">
+  <meta property="og:url" content="https://winterix19.netlify.app/ai_careers.html">
+  <meta property="og:type" content="website">
 
-    <!-- Open Graph for Social Sharing -->
-    <meta property="og:title" content="Winterix19 - Stream Movies & TV Shows">
-    <meta property="og:description" content="Stream the latest movies and trending TV shows at Winterix19.">
-    <meta property="og:image" content="https://winterix19.netlify.app/assets/preview.jpg">
-    <meta property="og:url" content="https://winterix19.netlify.app/">
-    <meta property="og:type" content="website">
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <!-- Styles and Scripts -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="style.css" as="style">
+  <script defer src="script.js"></script>
 
-    <!-- Styles and Scripts -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="preload" href="style.css" as="style">
-    <script defer src="script.js"></script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-MHJ9ZS8C');
-    </script>
-    <!-- End Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MHJ9ZS8C');
+  </script>
+  <!-- End Google Tag Manager -->
 
 </head>
 <body class="dark">
 
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHJ9ZS8C"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHJ9ZS8C"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-    <nav class="sidebar" aria-label="Main Navigation">
-        <h1>Winterix19</h1>
-        <ul>
-            <!-- Home, Movies, Trending still toggle sections within index.html -->
-            <li onclick="setPage('home')" role="button" tabindex="0">🏠 Home</li>
-            <li onclick="setPage('movies')" role="button" tabindex="0">🎬 Movies</li>
-            <li onclick="setPage('trending')" role="button" tabindex="0">🔥 Trending</li>
+  <nav class="sidebar" aria-label="Main Navigation">
+    <h1>Winterix19</h1>
+    <ul>
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="movies.html">🎬 Movies</a></li>
+      <li><a href="trending.html">🔥 Trending</a></li>
+      <li><a href="ai_careers.html">🤖 AI Careers</a></li>
+    </ul>
+    <button id="themeToggle" aria-label="Toggle Dark Mode">🌙 Dark Mode</button>
+  </nav>
 
-            <!-- Direct link to the dedicated AI Careers page -->
-            <li>
-                <a href="ai_careers.html" role="button" tabindex="0">🤖 AI Careers</a>
-            </li>
-        </ul>
-        <button id="themeToggle" aria-label="Toggle Dark Mode">🌙 Dark Mode</button>
-    </nav>
+  <main>
+    <header class="header">
+      <h2>Leonardo AI Careers</h2>
+      <p>Stay ahead in the tech industry with AI job opportunities and news.</p>
+    </header>
 
-    <main>
-        <header class="header">
-            <h2>Welcome to Winterix19</h2>
-            <p>Your ultimate winter streaming destination ❄️</p>
-        </header>
-
-        <!-- Movies Section (Default/Home) -->
-        <section id="moviesSection" aria-labelledby="moviesTitle">
-            <h3 id="moviesTitle">Popular Movies</h3>
-            <div id="moviesGrid" class="movies-grid">
-                <!-- Example Movie Card -->
-                <div class="movie-card">
-                    <img src="movie-poster.jpg" alt="Movie Title Poster" loading="lazy">
-                    <h4>Movie Title</h4>
-                </div>
-            </div>
-        </section>
-
-        <!-- Removed the old AI Careers hidden section 
-             since we now have ai_careers.html as a separate page. -->
-    </main>
-
-    <script>
-        // Show or hide sections within index.html (Home, Movies, Trending).
-        function setPage(page) {
-            // Hide all relevant sections first
-            document.getElementById('moviesSection').classList.add('hidden');
-            // If you have a trendingSection, uncomment this line:
-            // document.getElementById('trendingSection').classList.add('hidden');
-
-            // Show the selected section
-            if (page === 'home') {
-                // For "Home", you could show a default section (e.g., moviesSection)
-                document.getElementById('moviesSection').classList.remove('hidden');
-            } else if (page === 'movies') {
-                document.getElementById('moviesSection').classList.remove('hidden');
-            } else if (page === 'trending') {
-                // If you have a trendingSection, show it here
-                // document.getElementById('trendingSection').classList.remove('hidden');
-            }
-        }
-
-        // Dark Mode Toggle
-        document.getElementById('themeToggle').addEventListener('click', function() {
-            document.body.classList.toggle('dark');
-        });
-    </script>
-
-    <style>
-        .hidden { 
-            display: none; 
-        }
-    </style>
+    <section id="aiNews">
+      <h3>Latest AI News</h3>
+      <ul id="aiNewsList">
+        <!-- Latest news items will appear here -->
+      </ul>
+      <!-- The file upload input has been removed so that regular users don't see upload functionality -->
+    </section>
+  </main>
 
 </body>
 </html>
