@@ -89,13 +89,18 @@
 
     <script>
         function setPage(page) {
+            // Hide all sections
             document.getElementById('moviesSection').classList.add('hidden');
             document.getElementById('aiCareersSection').classList.add('hidden');
-            
+
+            // Show the selected section
             if (page === 'movies') {
                 document.getElementById('moviesSection').classList.remove('hidden');
             } else if (page === 'leonardo-ai-careers') {
                 document.getElementById('aiCareersSection').classList.remove('hidden');
+            } else {
+                // Default to Home (movies section visible)
+                document.getElementById('moviesSection').classList.remove('hidden');
             }
         }
 
@@ -110,6 +115,11 @@
                 };
                 reader.readAsText(file);
             }
+        });
+
+        // Toggle Dark Mode
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark');
         });
     </script>
 
