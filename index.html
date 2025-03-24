@@ -75,7 +75,47 @@
                 </div>
             </div>
         </section>
+
+        <section id="aiCareersSection" class="hidden" aria-labelledby="aiCareersTitle">
+            <h3 id="aiCareersTitle">Leonardo AI Careers</h3>
+            <p>Explore exciting career opportunities in AI and machine learning with Leonardo AI. Stay ahead in the tech industry with innovative projects and cutting-edge advancements.</p>
+            <div id="aiNews">
+                <h4>Latest AI News</h4>
+                <ul id="aiNewsList"></ul>
+                <input type="file" id="uploadNews" accept=".txt" />
+            </div>
+        </section>
     </main>
+
+    <script>
+        function setPage(page) {
+            document.getElementById('moviesSection').classList.add('hidden');
+            document.getElementById('aiCareersSection').classList.add('hidden');
+            
+            if (page === 'movies') {
+                document.getElementById('moviesSection').classList.remove('hidden');
+            } else if (page === 'leonardo-ai-careers') {
+                document.getElementById('aiCareersSection').classList.remove('hidden');
+            }
+        }
+
+        document.getElementById('uploadNews').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const newsItem = document.createElement('li');
+                    newsItem.textContent = e.target.result;
+                    document.getElementById('aiNewsList').appendChild(newsItem);
+                };
+                reader.readAsText(file);
+            }
+        });
+    </script>
+
+    <style>
+        .hidden { display: none; }
+    </style>
 
 </body>
 </html>
