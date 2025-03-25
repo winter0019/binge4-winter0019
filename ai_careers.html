@@ -25,28 +25,10 @@
 
     <!-- Styles and Scripts -->
     <link rel="stylesheet" href="style.css">
-    <link rel="preload" href="style.css" as="style">
     <script defer src="script.js"></script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-MHJ9ZS8C');
-    </script>
-    <!-- End Google Tag Manager -->
 
 </head>
 <body class="dark">
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHJ9ZS8C"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
     <nav class="sidebar" aria-label="Main Navigation">
         <h1>Winterix19</h1>
@@ -56,7 +38,6 @@
             <li onclick="setPage('trending')" role="button" tabindex="0">🔥 Trending</li>
             <li onclick="setPage('leonardo-ai-careers')" role="button" tabindex="0">🤖 AI Careers</li>
         </ul>
-        <button id="themeToggle" aria-label="Toggle Dark Mode">🌙 Dark Mode</button>
     </nav>
 
     <main>
@@ -68,7 +49,6 @@
         <section id="moviesSection" aria-labelledby="moviesTitle">
             <h3 id="moviesTitle">Popular Movies</h3>
             <div id="moviesGrid" class="movies-grid">
-                <!-- Example Movie Card -->
                 <div class="movie-card">
                     <img src="movie-poster.jpg" alt="Movie Title Poster" loading="lazy">
                     <h4>Movie Title</h4>
@@ -109,9 +89,12 @@
 
             <section class="ai-news">
                 <h3>Latest AI News</h3>
-                <p>Stay updated with the latest advancements in AI and technology.</p>
-                <ul id="aiNewsList"></ul>
-                <input type="file" id="uploadNews" accept=".txt" class="hidden" />
+                <ul id="aiNewsList">
+                    <li>🔹 OpenAI announces GPT-5 with improved reasoning capabilities.</li>
+                    <li>🔹 Google DeepMind reveals Gemini AI for advanced image processing.</li>
+                    <li>🔹 Tesla's AI team shares insights on self-driving improvements.</li>
+                    <li>🔹 AI ethics researchers warn about potential deepfake threats.</li>
+                </ul>
             </section>
         </section>
     </main>
@@ -127,26 +110,6 @@
                 document.getElementById('aiCareersSection').classList.remove('hidden');
             }
         }
-
-        // Simulating admin check (replace with real authentication)
-        const isAdmin = false; // Set to true for admins
-
-        if (isAdmin) {
-            document.getElementById('uploadNews').classList.remove('hidden');
-        }
-
-        document.getElementById('uploadNews').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const newsItem = document.createElement('li');
-                    newsItem.textContent = e.target.result;
-                    document.getElementById('aiNewsList').appendChild(newsItem);
-                };
-                reader.readAsText(file);
-            }
-        });
     </script>
 
     <style>
