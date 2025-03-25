@@ -2,92 +2,139 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Leonardo AI Careers - Winterix19</title>
+    <title>Winterix19 - Stream Movies & TV Shows</title>
 
     <!-- Meta Description for SEO -->
-    <meta name="description" content="Explore AI job opportunities and the future of tech at Leonardo AI Careers. Discover Phoenix 1.0 and innovation-driven roles.">
+    <meta name="description" content="Stream the latest movies and trending TV shows at Winterix19. Your ultimate winter streaming destination.">
+
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="gnvbU5Vg03fZufblZ_eHczqXoWSLAtSm6yESieYdMpE" />
 
     <!-- Open Graph for Social Sharing -->
-    <meta property="og:title" content="Leonardo AI Careers - Winterix19">
-    <meta property="og:description" content="Explore AI job opportunities and the future of tech at Leonardo AI.">
-    <meta property="og:image" content="https://winterix19.netlify.app/assets/ai-careers.jpg">
-    <meta property="og:url" content="https://winterix19.netlify.app/ai_careers.html">
+    <meta property="og:title" content="Winterix19 - Stream Movies & TV Shows">
+    <meta property="og:description" content="Stream the latest movies and trending TV shows at Winterix19.">
+    <meta property="og:image" content="https://winterix19.netlify.app/assets/preview.jpg">
+    <meta property="og:url" content="https://winterix19.netlify.app/">
     <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Styles and Scripts -->
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style">
     <script defer src="script.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MHJ9ZS8C');
+    </script>
+    <!-- End Google Tag Manager -->
 
 </head>
 <body class="dark">
 
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MHJ9ZS8C"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <nav class="sidebar" aria-label="Main Navigation">
         <h1>Winterix19</h1>
         <ul>
-            <li><a href="index.html">🏠 Home</a></li>
-            <li><a href="movies.html">🎬 Movies</a></li>
-            <li><a href="trending.html">🔥 Trending</a></li>
-            <li><a href="ai_careers.html" class="active">🤖 AI Careers</a></li>
+            <li onclick="setPage('home')" role="button" tabindex="0">🏠 Home</li>
+            <li onclick="setPage('movies')" role="button" tabindex="0">🎬 Movies</li>
+            <li onclick="setPage('trending')" role="button" tabindex="0">🔥 Trending</li>
+            <li onclick="setPage('leonardo-ai-careers')" role="button" tabindex="0">🤖 AI Careers</li>
         </ul>
         <button id="themeToggle" aria-label="Toggle Dark Mode">🌙 Dark Mode</button>
     </nav>
 
     <main>
         <header class="header">
-            <h2>Leonardo AI Careers</h2>
-            <p>Stay ahead in the tech industry with AI job opportunities and innovation.</p>
+            <h2>Welcome to Winterix19</h2>
+            <p>Your ultimate winter streaming destination ❄️</p>
         </header>
 
-        <section class="ai-intro">
-            <h3>Phoenix 1.0: Where Innovation Meets Human Ambition</h3>
-            <p>
-                In a bustling studio lit by the soft glow of Clara Nguyen’s screen, a digital artist stared at her latest project—a concept for a sustainable cityscape. The deadline loomed, but her vision felt fragmented. She needed a breakthrough.
-            </p>
-            <p>
-                That’s when she discovered **Leonardo AI's Phoenix 1.0**, the generative AI platform redefining creativity. Phoenix 1.0 wasn’t just another tool; built on **ethical AI frameworks** and **real-time collaboration features**, it transformed Clara’s workflow. By applying simple prompts, the platform generated **intricate structural designs**, blending her sketches with dynamic environmental elements.
-            </p>
-            <p>
-                "The AI didn’t replace my creativity—it echoed it," Clara remarked, refining details as Phoenix 1.0 suggested **eco-friendly materials** and **energy-efficient structures**. It felt like having a co-pilot who spoke the language of imagination.
-            </p>
+        <section id="moviesSection" aria-labelledby="moviesTitle">
+            <h3 id="moviesTitle">Popular Movies</h3>
+            <div id="moviesGrid" class="movies-grid">
+                <!-- Example Movie Card -->
+                <div class="movie-card">
+                    <img src="movie-poster.jpg" alt="Movie Title Poster" loading="lazy">
+                    <h4>Movie Title</h4>
+                </div>
+            </div>
         </section>
 
-        <section class="ai-impact">
-            <h3>Empowering Human Creativity</h3>
-            <p>
-                As the project spread, clients marveled at the seamless fusion of **human intuition and machine precision**. But for Clara, the real revelation was how Leonardo AI **prioritized this synergy**. 
-            </p>
-            <p>
-                Their ethos—**"Innovation thrives when humans lead and AI empowers"**—resonated deeply. Browsing their careers page, Clara found roles like **AI Creativity Strategist** and **Ethical AI Developer**, realizing this was a team shaping the future while preserving the **human heartbeat** behind every algorithm.
-            </p>
-        </section>
+        <section id="aiCareersSection" class="hidden" aria-labelledby="aiCareersTitle">
+            <h3 id="aiCareersTitle">Leonardo AI Careers</h3>
+            <p>Explore exciting career opportunities in AI and machine learning with Leonardo AI. Stay ahead in the tech industry with innovative projects and cutting-edge advancements.</p>
+            
+            <article>
+                <h4>Phoenix 1.0: Where Innovation Meets Human Ambition</h4>
+                <p>
+                    In a bustling studio lit by the soft glow of Clara Nguyen, a digital artist stared at her latest project, a concept for a sustainable cityscape. 
+                    The deadline loomed but her vision felt fragmented. She needed to get through, and that's when she discovered Leonardo AI's Phoenix 1.0, the generative AI platform redefining creativity.
+                </p>
+                <p>
+                    Phoenix 1.0 wasn't just another tool. Built on ethical AI frameworks and real-time collaboration features, it transformed Clara's workflow. 
+                    By applying prompts, the platform generated an intricate structural design, blending her sketches with dynamic environment elements. The AI didn't replace her creativity, it echoed it.
+                </p>
+                <p>
+                    "It's like having a co-pilot who speaks the language of imagination," she remarked, refining details as Phoenix 1.0 suggested eco-friendly materials and energy-efficient structures.
+                </p>
+                <p>
+                    As the project spread, clients marveled at the seamless fusion of human intuition and machine precision. But for Clara, the real revelation was how Leonardo AI careers prioritized this synergy. 
+                    The company ethos, "Innovation thrives when humans lead and AI empowers," resonated deeply. She browsed their careers page, intrigued by roles like AI Creativity Strategist and Ethical AI Developer.
+                </p>
+                <p>
+                    Leonardo AI's launch of Phoenix 1.0 wasn't just a product milestone, it was a call to innovators, developers, artists, and storytellers. Clara Nguyen applied for a role as a Creative Ambassador, 
+                    inspired to bridge the gap between technology and artistry.
+                </p>
+                <p>
+                    As Phoenix 1.0 reshaped industries, Leonardo AI's message grew clear: the future belongs to those who dare to create with machines, not just through them. 
+                    For Clara and countless others, it was more than innovation—it was the dawn of a collaboration renaissance.
+                </p>
+            </article>
 
-        <section class="ai-opportunities">
-            <h3>Join the Future of AI Innovation</h3>
-            <p>
-                Leonardo AI’s launch of **Phoenix 1.0** wasn’t just a product milestone—it was a **call to innovators, developers, artists, and storytellers** eager to pioneer new frontiers.
-            </p>
-            <p>
-                Inspired by the possibilities, Clara applied for a role as a **Creative Ambassador**, aiming to bridge the gap between **technology and artistry**. As Phoenix 1.0 reshaped industries, Leonardo AI’s message became clear:
-            </p>
-            <blockquote>
-                <strong>“The future belongs to those who dare to create with machines, not just through them.”</strong>
-            </blockquote>
-            <p>
-                For Clara and countless others, it was more than innovation—it was the dawn of a **collaborative renaissance**.
-            </p>
-        </section>
-
-        <section class="ai-news">
-            <h3>Latest AI News</h3>
-            <p>Stay updated with the latest advancements in AI and technology.</p>
-            <ul id="aiNewsList"></ul>
-            <input type="file" id="uploadNews" accept=".txt" />
+            <section class="ai-news">
+                <h3>Latest AI News</h3>
+                <p>Stay updated with the latest advancements in AI and technology.</p>
+                <ul id="aiNewsList"></ul>
+                <input type="file" id="uploadNews" accept=".txt" class="hidden" />
+            </section>
         </section>
     </main>
 
     <script>
+        function setPage(page) {
+            document.getElementById('moviesSection').classList.add('hidden');
+            document.getElementById('aiCareersSection').classList.add('hidden');
+            
+            if (page === 'movies') {
+                document.getElementById('moviesSection').classList.remove('hidden');
+            } else if (page === 'leonardo-ai-careers') {
+                document.getElementById('aiCareersSection').classList.remove('hidden');
+            }
+        }
+
+        // Simulating admin check (replace with real authentication)
+        const isAdmin = false; // Set to true for admins
+
+        if (isAdmin) {
+            document.getElementById('uploadNews').classList.remove('hidden');
+        }
+
         document.getElementById('uploadNews').addEventListener('change', function(event) {
             const file = event.target.files[0];
             if (file) {
@@ -103,22 +150,6 @@
     </script>
 
     <style>
-        .ai-intro, .ai-impact, .ai-opportunities, .ai-news {
-            margin: 20px;
-            padding: 15px;
-            background: #222;
-            border-radius: 10px;
-        }
-        .ai-intro h3, .ai-impact h3, .ai-opportunities h3, .ai-news h3 {
-            color: #00bcd4;
-        }
-        .ai-opportunities blockquote {
-            font-style: italic;
-            color: #ffd700;
-            border-left: 4px solid #ffd700;
-            padding-left: 10px;
-            margin: 10px 0;
-        }
         .hidden { display: none; }
     </style>
 
