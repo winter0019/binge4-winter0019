@@ -1,22 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Page Not Found - Binge-Winter0019</title>
-    <style>
-        body { 
-            background: #1a1a2e;
-            color: #fff;
-            text-align: center;
-            padding: 2rem;
-            font-family: 'Poppins', sans-serif;
-        }
-        a { color: #4ecdc4; text-decoration: none; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Page Not Found | Binge Winter0019</title>
+  <meta name="description" content="Oops! This page no longer exists or has melted away. Return to the homepage to continue binge-watching." />
+  <meta name="robots" content="noindex, follow" />
+  
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- GA4 Tracking (via gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QK1CFGNSEE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QK1CFGNSEE');
+  </script>
+
+  <!-- Styles -->
+  <style>
+    body {
+      background: linear-gradient(145deg, #1a1a2e, #16213e);
+      color: #ffffff;
+      text-align: center;
+      padding: 4rem 1rem;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: fadeInDown 1s ease-out;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      animation: fadeIn 2s ease-in;
+    }
+    a {
+      color: #4ecdc4;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #4ecdc4;
+      border-radius: 30px;
+      transition: background 0.3s, color 0.3s;
+    }
+    a:hover {
+      background: #4ecdc4;
+      color: #1a1a2e;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>❄️ 404 - Winter Content Not Found ❄️</h1>
-    <p>The page you're looking for has melted away!</p>
-    <a href="/">Return to Home</a>
+  <h1>❄️ 404 - Winter Content Not Found ❄️</h1>
+  <p>The page you're looking for has melted away like morning frost.</p>
+  <a href="/">Return to Home</a>
 </body>
 </html>
